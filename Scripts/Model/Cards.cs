@@ -56,7 +56,7 @@ public class Cards
         }
         return typeList;
     }
-    public List<Cards> GetCards(string type)
+    public List<Cards> GetCards(string type,int pageSize, int offset)
     {
         List<Cards> cardsList = new List<Cards>();
         string connectionString = DatabaseConfig.ConnectionString;
@@ -65,9 +65,11 @@ public class Cards
             try
             {
                 connection.Open();
-                string query = "Select * from cards where type= @type limit 100";
+                string query = "Select * from cards where type= @type limit @limit offset @offset";
                 MySqlCommand command = new MySqlCommand(query, connection);
                 command.Parameters.AddWithValue("@type", type);
+                command.Parameters.AddWithValue("@limit", pageSize);
+                command.Parameters.AddWithValue("@offset", offset);
                 MySqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
@@ -112,5 +114,27 @@ public class Cards
 
         }
         return cardsList;
+    }
+    public int GetCardsCount(string type){
+        int count =0;
+        string connectionString = DatabaseConfig.ConnectionString;
+        using (MySqlConnection connection = new MySqlConnection(connectionString))
+        {
+            try
+            {
+                connection.Open();
+                string query = "Select count(*) from cards where type= @type";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@type", type);
+                count = Convert.ToInt32(command.ExecuteScalar());
+
+                return count;
+            }
+            catch (MySqlException ex)
+            {
+                Debug.LogError("Error: " + ex.Message);
+            }
+        }
+        return count;
     }
 }
