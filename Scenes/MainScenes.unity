@@ -6692,7 +6692,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 202, y: 213}
+  m_AnchoredPosition: {x: 205, y: 213}
   m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &896117487
@@ -6940,7 +6940,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -648, y: -158}
-  m_SizeDelta: {x: 440, y: 460}
+  m_SizeDelta: {x: 450, y: 470}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &928329879
 MonoBehaviour:
@@ -6991,7 +6991,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardsGalleryButton: {fileID: 1561227158}
   BooksGalleryButton: {fileID: 1852672617}
-  ArmyGalleryButton: {fileID: 1820343089}
+  CaptainsGalleryButton: {fileID: 1820343089}
   CollaborationGalleryButton: {fileID: 1299244269}
   CollaborationEquipmentGalleryButton: {fileID: 1545682979}
   EquipmentsGalleryButton: {fileID: 2063244915}
@@ -7206,7 +7206,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1661859481911484232, guid: e463f919cd1e87447b7af6c74c214193, type: 3}
       propertyPath: m_Name
-      value: ArmyGallery
+      value: CaptainsGallery
       objectReference: {fileID: 0}
     - target: {fileID: 6352304789590834188, guid: e463f919cd1e87447b7af6c74c214193, type: 3}
       propertyPath: m_Pivot.x
@@ -7298,7 +7298,7 @@ PrefabInstance:
       objectReference: {fileID: 2800000, guid: 2e5dd73aa6152e940b1941272c9180da, type: 3}
     - target: {fileID: 8651212633470184027, guid: e463f919cd1e87447b7af6c74c214193, type: 3}
       propertyPath: m_Text
-      value: Army Collection
+      value: Captains Collection
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e463f919cd1e87447b7af6c74c214193, type: 3}
@@ -8644,7 +8644,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 202, y: 213}
+  m_AnchoredPosition: {x: 205, y: 213}
   m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1130694658
@@ -10195,19 +10195,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1259785402}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 928329877}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1259785402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10497,19 +10485,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1282693147}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1358675153}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1282693147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11627,7 +11603,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -648, y: -158}
-  m_SizeDelta: {x: 440, y: 460}
+  m_SizeDelta: {x: 450, y: 470}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1358675155
 MonoBehaviour:
@@ -11678,7 +11654,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardsGalleryButton: {fileID: 1765717438}
   BooksGalleryButton: {fileID: 1738718609}
-  ArmyGalleryButton: {fileID: 1455501807}
+  CaptainsGalleryButton: {fileID: 1455501807}
   CollaborationGalleryButton: {fileID: 2051082200}
   CollaborationEquipmentGalleryButton: {fileID: 234595922}
   EquipmentsGalleryButton: {fileID: 258907964}
@@ -13608,7 +13584,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1661859481911484232, guid: e463f919cd1e87447b7af6c74c214193, type: 3}
       propertyPath: m_Name
-      value: ArmyGallery
+      value: CaptainsGallery
       objectReference: {fileID: 0}
     - target: {fileID: 6352304789590834188, guid: e463f919cd1e87447b7af6c74c214193, type: 3}
       propertyPath: m_Pivot.x
@@ -13700,7 +13676,7 @@ PrefabInstance:
       objectReference: {fileID: 2800000, guid: 55f47e62ea963be42b73b077b529e315, type: 3}
     - target: {fileID: 8651212633470184027, guid: e463f919cd1e87447b7af6c74c214193, type: 3}
       propertyPath: m_Text
-      value: Army Gallery
+      value: Captains Gallery
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e463f919cd1e87447b7af6c74c214193, type: 3}
@@ -16212,8 +16188,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1844658527}
+  - component: {fileID: 1844658528}
   m_Layer: 0
-  m_Name: ConnectDatabase
+  m_Name: ButtonManagement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16234,6 +16211,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1844658528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1844658525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3daa16b5e85fa9c42a6116f6f78c8a21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GalleryButton: {fileID: 1282693146}
+  CollectionButton: {fileID: 1259785401}
+  GalleryPanel: {fileID: 1358675153}
+  CollectionPanel: {fileID: 928329877}
 --- !u!1001 &1852672615
 PrefabInstance:
   m_ObjectHideFlags: 0

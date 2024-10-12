@@ -8,7 +8,7 @@ public class CollectionManagement : MonoBehaviour
 {
     public Button CardsGalleryButton;
     public Button BooksGalleryButton;
-    public Button ArmyGalleryButton;
+    public Button CaptainsGalleryButton;
     public Button CollaborationGalleryButton;
     public Button CollaborationEquipmentGalleryButton;
     public Button EquipmentsGalleryButton;
@@ -45,7 +45,7 @@ public class CollectionManagement : MonoBehaviour
         pageSize = 100;
         CardsGalleryButton.onClick.AddListener(GetCardsType);
         BooksGalleryButton.onClick.AddListener(GetBooksType);
-        ArmyGalleryButton.onClick.AddListener(GetArmyType);
+        CaptainsGalleryButton.onClick.AddListener(GetCaptainsType);
         CollaborationGalleryButton.onClick.AddListener(GetCollaborationType);
         CollaborationEquipmentGalleryButton.onClick.AddListener(GetCollaborationEquipmentsType);
         EquipmentsGalleryButton.onClick.AddListener(GetEquipmentsType);
@@ -80,11 +80,11 @@ public class CollectionManagement : MonoBehaviour
         GetButtonType();
         titleText.text = "Books";
     }
-    public void GetArmyType()
+    public void GetCaptainsType()
     {
-        mainType = "Army";
+        mainType = "Captains";
         GetButtonType();
-        titleText.text = "Army";
+        titleText.text = "Captains";
     }
     public void GetCollaborationType()
     {
@@ -162,9 +162,9 @@ public class CollectionManagement : MonoBehaviour
         {
             return Books.GetUniqueBookTypes();
         }
-        else if (mainType.Equals("Army"))
+        else if (mainType.Equals("Captains"))
         {
-            return Army.GetUniqueArmyTypes();
+            return Captains.GetUniqueCaptainsTypes();
         }
         else if (mainType.Equals("CollaborationEquipments"))
         {
@@ -235,13 +235,13 @@ public class CollectionManagement : MonoBehaviour
 
                         totalRecord = booksManager.GetBooksCount(subtype);
                     }
-                    else if (mainType.Equals("Army"))
+                    else if (mainType.Equals("Captains"))
                     {
-                        Army armyManager = new Army();
-                        List<Army> army = armyManager.GetArmyCollection(subtype, pageSize, offset);
-                        createArmy(army);
+                        Captains captainsManager = new Captains();
+                        List<Captains> captains = captainsManager.GetCaptainsCollection(subtype, pageSize, offset);
+                        createCaptains(captains);
 
-                        totalRecord = armyManager.GetArmyCount(subtype);
+                        totalRecord = captainsManager.GetCaptainsCount(subtype);
                     }
                     else if (mainType.Equals("CollaborationEquipments"))
                     {
@@ -386,13 +386,13 @@ public class CollectionManagement : MonoBehaviour
 
             totalRecord = booksManager.GetBooksCount(type);
         }
-        else if (mainType.Equals("Army"))
+        else if (mainType.Equals("Captains"))
         {
-            Army armyManager = new Army();
-            List<Army> army = armyManager.GetArmyCollection(type, pageSize, offset);
-            createArmy(army);
+            Captains captainsManager = new Captains();
+            List<Captains> captains = captainsManager.GetCaptainsCollection(type, pageSize, offset);
+            createCaptains(captains);
 
-            totalRecord = armyManager.GetArmyCount(type);
+            totalRecord = captainsManager.GetCaptainsCount(type);
         }
         else if (mainType.Equals("CollaborationEquipments"))
         {
@@ -589,38 +589,38 @@ public class CollectionManagement : MonoBehaviour
             }
         }
     }
-    private void createArmy(List<Army> armyList)
+    private void createCaptains(List<Captains> captainsList)
     {
-        foreach (var army in armyList)
+        foreach (var captain in captainsList)
         {
-            GameObject armyObject = Instantiate(cardsPrefab, mainContent);
+            GameObject captainsObject = Instantiate(cardsPrefab, mainContent);
 
-            Text Title = armyObject.transform.Find("Title").GetComponent<Text>();
-            Title.text = army.name.Replace("_", " ");
+            Text Title = captainsObject.transform.Find("Title").GetComponent<Text>();
+            Title.text = captain.name.Replace("_", " ");
 
-            RawImage Image = armyObject.transform.Find("Image").GetComponent<RawImage>();
-            string fileNameWithoutExtension = army.image.Replace(".png", "");
+            RawImage Image = captainsObject.transform.Find("Image").GetComponent<RawImage>();
+            string fileNameWithoutExtension = captain.image.Replace(".png", "");
             fileNameWithoutExtension = fileNameWithoutExtension.Replace(".jpg", "");
             Texture texture = Resources.Load<Texture>($"{fileNameWithoutExtension}");
             Image.texture = texture;
 
-            RawImage rareImage = armyObject.transform.Find("Rare").GetComponent<RawImage>();
-            Texture rareTexture = Resources.Load<Texture>($"UI/UI/{army.rare}");
+            RawImage rareImage = captainsObject.transform.Find("Rare").GetComponent<RawImage>();
+            Texture rareTexture = Resources.Load<Texture>($"UI/UI/{captain.rare}");
             rareImage.texture = rareTexture;
 
-            RawImage blockImage = armyObject.transform.Find("Block").GetComponent<RawImage>();
-            Button Unlock = armyObject.transform.Find("Unlock").GetComponent<Button>();
-            if (army.status.Equals("available"))
+            RawImage blockImage = captainsObject.transform.Find("Block").GetComponent<RawImage>();
+            Button Unlock = captainsObject.transform.Find("Unlock").GetComponent<Button>();
+            if (captain.status.Equals("available"))
             {
                 blockImage.gameObject.SetActive(false);
                 Unlock.gameObject.SetActive(false);
             }
-            else if (army.status.Equals("pending"))
+            else if (captain.status.Equals("pending"))
             {
                 blockImage.gameObject.SetActive(true);
                 Unlock.gameObject.SetActive(true);
             }
-            else if (army.status.Equals("block"))
+            else if (captain.status.Equals("block"))
             {
                 blockImage.gameObject.SetActive(true);
                 Unlock.gameObject.SetActive(false);
@@ -1232,15 +1232,15 @@ public class CollectionManagement : MonoBehaviour
                 List<Books> books = booksManager.GetBooksCollection(subType, pageSize, offset);
                 createBooks(books);
             }
-            else if (mainType.Equals("Army"))
+            else if (mainType.Equals("Captains"))
             {
-                Army armyManager = new Army();
-                totalRecord = armyManager.GetArmyCount(subType);
+                Captains captainsManager = new Captains();
+                totalRecord = captainsManager.GetCaptainsCount(subType);
                 totalPage = CalculateTotalPages(totalRecord, pageSize);
                 currentPage = currentPage + 1;
                 offset = offset + pageSize;
-                List<Army> army = armyManager.GetArmyCollection(subType, pageSize, offset);
-                createArmy(army);
+                List<Captains> army = captainsManager.GetCaptainsCollection(subType, pageSize, offset);
+                createCaptains(army);
             }
             else if (mainType.Equals("CollaborationEquipments"))
             {
@@ -1384,15 +1384,15 @@ public class CollectionManagement : MonoBehaviour
                 List<Books> books = booksManager.GetBooksCollection(subType, pageSize, offset);
                 createBooks(books);
             }
-            else if (mainType.Equals("Army"))
+            else if (mainType.Equals("Captains"))
             {
-                Army armyManager = new Army();
-                totalRecord = armyManager.GetArmyCount(subType);
+                Captains captainsManager = new Captains();
+                totalRecord = captainsManager.GetCaptainsCount(subType);
                 totalPage = CalculateTotalPages(totalRecord, pageSize);
                 currentPage = currentPage - 1;
                 offset = offset - pageSize;
-                List<Army> army = armyManager.GetArmyCollection(subType, pageSize, offset);
-                createArmy(army);
+                List<Captains> army = captainsManager.GetCaptainsCollection(subType, pageSize, offset);
+                createCaptains(army);
             }
             else if (mainType.Equals("CollaborationEquipments"))
             {
