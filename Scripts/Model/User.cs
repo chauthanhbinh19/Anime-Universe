@@ -135,4 +135,7 @@ public class User
             namePanel.SetActive(false);
         }
     }
+    public int GetUserId(){
+        return CurrentUserId;
+    }
 }

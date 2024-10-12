@@ -18,6 +18,8 @@ public class GalleryManagement : MonoBehaviour
     public Button SkillsGalleryButton;
     public Button SymbolsGalleryButton;
     public Button TitlesGalleryButton;
+    public Button MilitaryGalleryButton;
+    public Button SpellGalleryButton;
     public GameObject buttonPrefab;
     public GameObject DictionaryPanel;
     public Transform content;
@@ -50,6 +52,11 @@ public class GalleryManagement : MonoBehaviour
         MedalsGalleryButton.onClick.AddListener(GetMedalsType);
         MonstersGalleryButton.onClick.AddListener(GetMonstersType);
         PetsGalleryButton.onClick.AddListener(GetPetsType);
+        SkillsGalleryButton.onClick.AddListener(GetSkillsType);
+        SymbolsGalleryButton.onClick.AddListener(GetSymbolsType);
+        TitlesGalleryButton.onClick.AddListener(GetTitlesType);
+        MilitaryGalleryButton.onClick.AddListener(GetMilitaryType);
+        SpellGalleryButton.onClick.AddListener(GetSpellType);
 
         CloseButton.onClick.AddListener(ClosePanel);
         NextButton.onClick.AddListener(ChangeNextPage);
@@ -115,6 +122,36 @@ public class GalleryManagement : MonoBehaviour
         GetButtonType();
         titleText.text = "Pets";
     }
+    public void GetSkillsType()
+    {
+        mainType = "Skills";
+        GetButtonType();
+        titleText.text = "Skills";
+    }
+    public void GetSymbolsType()
+    {
+        mainType = "Symbols";
+        GetButtonType();
+        titleText.text = "Symbols";
+    }
+    public void GetTitlesType()
+    {
+        mainType = "Titles";
+        GetButtonType();
+        titleText.text = "Titles";
+    }
+    public void GetMilitaryType()
+    {
+        mainType = "Military";
+        GetButtonType();
+        titleText.text = "Military";
+    }
+    public void GetSpellType()
+    {
+        mainType = "Spell";
+        GetButtonType();
+        titleText.text = "Spell";
+    }
     public List<string> GetUniqueTypes()
     {
         if (mainType.Equals("Cards"))
@@ -140,6 +177,22 @@ public class GalleryManagement : MonoBehaviour
         else if (mainType.Equals("Pets"))
         {
             return Pets.GetUniquePetsTypes();
+        }
+        else if (mainType.Equals("Skills"))
+        {
+            return Skills.GetUniqueSkillsTypes();
+        }
+        else if (mainType.Equals("Symbols"))
+        {
+            return Symbols.GetUniqueSymbolsTypes();
+        }
+        else if (mainType.Equals("Military"))
+        {
+            return Military.GetUniqueMilitaryTypes();
+        }
+        else if (mainType.Equals("Spell"))
+        {
+            return Spell.GetUniqueSpellTypes();
         }
         return new List<string>();
     }
@@ -209,10 +262,42 @@ public class GalleryManagement : MonoBehaviour
                     else if (mainType.Equals("Pets"))
                     {
                         Pets petsManager = new Pets();
-                        List<Pets> equipments = petsManager.GetPets(subtype, pageSize, offset);
-                        createPets(equipments);
+                        List<Pets> pets = petsManager.GetPets(subtype, pageSize, offset);
+                        createPets(pets);
 
                         totalRecord = petsManager.GetPetsCount(subtype);
+                    }
+                    else if (mainType.Equals("Skills"))
+                    {
+                        Skills skillsManager = new Skills();
+                        List<Skills> skills = skillsManager.GetSkills(subtype, pageSize, offset);
+                        createSkills(skills);
+
+                        totalRecord = skillsManager.GetSkillsCount(subtype);
+                    }
+                    else if (mainType.Equals("Symbols"))
+                    {
+                        Symbols symbolsManager = new Symbols();
+                        List<Symbols> symbols = symbolsManager.GetSymbols(subtype, pageSize, offset);
+                        createSymbols(symbols);
+
+                        totalRecord = symbolsManager.GetSymbolsCount(subtype);
+                    }
+                    else if (mainType.Equals("Military"))
+                    {
+                        Military militaryManager = new Military();
+                        List<Military> militaryList = militaryManager.GetMilitary(subtype, pageSize, offset);
+                        createMilitary(militaryList);
+
+                        totalRecord = militaryManager.GetMilitaryCount(subType);
+                    }
+                    else if (mainType.Equals("Spell"))
+                    {
+                        Spell spellManager = new Spell();
+                        List<Spell> spellList = spellManager.GetSpell(subtype, pageSize, offset);
+                        createSpell(spellList);
+
+                        totalRecord = spellManager.GetSpellCount(subType);
                     }
 
                     totalPage = CalculateTotalPages(totalRecord, pageSize);
@@ -252,6 +337,15 @@ public class GalleryManagement : MonoBehaviour
 
                 totalRecord = monstersManager.GetMonstersCount();
             }
+            else if (mainType.Equals("Titles"))
+            {
+                Titles titleManager = new Titles();
+                List<Titles> titlesList = titleManager.GetTitles(pageSize, offset);
+                createTitles(titlesList);
+
+                totalRecord = titleManager.GetTitlesCount();
+            }
+
             totalPage = CalculateTotalPages(totalRecord, pageSize);
             PageText.text = currentPage.ToString() + "/" + totalPage.ToString();
         }
@@ -320,10 +414,42 @@ public class GalleryManagement : MonoBehaviour
         else if (mainType.Equals("Pets"))
         {
             Pets petsManager = new Pets();
-            List<Pets> equipments = petsManager.GetPets(type, pageSize, offset);
-            createPets(equipments);
+            List<Pets> pets = petsManager.GetPets(type, pageSize, offset);
+            createPets(pets);
 
             totalRecord = petsManager.GetPetsCount(type);
+        }
+        else if (mainType.Equals("Skills"))
+        {
+            Skills skillsManager = new Skills();
+            List<Skills> skills = skillsManager.GetSkills(type, pageSize, offset);
+            createSkills(skills);
+
+            totalRecord = skillsManager.GetSkillsCount(type);
+        }
+        else if (mainType.Equals("Symbols"))
+        {
+            Symbols symbolsManager = new Symbols();
+            List<Symbols> symbols = symbolsManager.GetSymbols(type, pageSize, offset);
+            createSymbols(symbols);
+
+            totalRecord = symbolsManager.GetSymbolsCount(type);
+        }
+        else if (mainType.Equals("Military"))
+        {
+            Military militaryManager = new Military();
+            List<Military> militaryList = militaryManager.GetMilitary(type, pageSize, offset);
+            createMilitary(militaryList);
+
+            totalRecord = militaryManager.GetMilitaryCount(type);
+        }
+        else if (mainType.Equals("Spell"))
+        {
+            Spell spellManager = new Spell();
+            List<Spell> spellList = spellManager.GetSpell(type, pageSize, offset);
+            createSpell(spellList);
+
+            totalRecord = spellManager.GetSpellCount(type);
         }
 
         totalPage = CalculateTotalPages(totalRecord, pageSize);
@@ -654,15 +780,158 @@ public class GalleryManagement : MonoBehaviour
             Texture texture = Resources.Load<Texture>($"{fileNameWithoutExtension}");
             Image.texture = texture;
 
-            if(pet.type.Equals("Prime_Monster")){
+            if (pet.type.Equals("Prime_Monster"))
+            {
                 Image.SetNativeSize();
-                Image.transform.localScale = new Vector3(0.3f,0.3f,0.3f);
+                Image.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
             }
 
             RawImage rareImage = petsObject.transform.Find("Rare").GetComponent<RawImage>();
             Texture rareTexture = Resources.Load<Texture>("UI/UI/LG");
             rareImage.texture = rareTexture;
 
+        }
+    }
+    private void createSkills(List<Skills> skillsList)
+    {
+        foreach (var skill in skillsList)
+        {
+            GameObject skillObject = Instantiate(equipmentsPrefab, mainContent);
+
+            Text Title = skillObject.transform.Find("Title").GetComponent<Text>();
+            Title.text = skill.name.Replace("_", " ");
+
+            RawImage Image = skillObject.transform.Find("Image").GetComponent<RawImage>();
+            string fileNameWithoutExtension = skill.image.Replace(".png", "");
+            fileNameWithoutExtension = fileNameWithoutExtension.Replace(".jpg", "");
+            Texture texture = Resources.Load<Texture>($"{fileNameWithoutExtension}");
+            Image.texture = texture;
+            // cardImage.SetNativeSize();
+            // cardImage.transform.localScale = new Vector3(0.35f, 0.35f, 0.35f);
+
+            RawImage rareImage = skillObject.transform.Find("Rare").GetComponent<RawImage>();
+            Texture rareTexture = Resources.Load<Texture>($"UI/UI/{skill.rare}");
+            rareImage.texture = rareTexture;
+
+            GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
+            if (gridLayout != null)
+            {
+                gridLayout.cellSize = new Vector2(200, 230);
+            }
+        }
+    }
+    private void createSymbols(List<Symbols> symbolsList)
+    {
+        foreach (var symbol in symbolsList)
+        {
+            GameObject symbolObject = Instantiate(equipmentsPrefab, mainContent);
+
+            Text Title = symbolObject.transform.Find("Title").GetComponent<Text>();
+            Title.text = symbol.name.Replace("_", " ");
+
+            RawImage Image = symbolObject.transform.Find("Image").GetComponent<RawImage>();
+            string fileNameWithoutExtension = symbol.image.Replace(".png", "");
+            fileNameWithoutExtension = fileNameWithoutExtension.Replace(".jpg", "");
+            Texture texture = Resources.Load<Texture>($"{fileNameWithoutExtension}");
+            Image.texture = texture;
+            // cardImage.SetNativeSize();
+            // cardImage.transform.localScale = new Vector3(0.35f, 0.35f, 0.35f);
+
+            RawImage rareImage = symbolObject.transform.Find("Rare").GetComponent<RawImage>();
+            Texture rareTexture = Resources.Load<Texture>($"UI/UI/{symbol.rare}");
+            rareImage.texture = rareTexture;
+
+            RawImage rareBackgroundImage = symbolObject.transform.Find("RareBackground").GetComponent<RawImage>();
+            rareImage.gameObject.SetActive(false);
+            rareBackgroundImage.gameObject.SetActive(false);
+
+            GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
+            if (gridLayout != null)
+            {
+                gridLayout.cellSize = new Vector2(200, 230);
+            }
+        }
+    }
+    private void createTitles(List<Titles> titlesList)
+    {
+        foreach (var title in titlesList)
+        {
+            GameObject titleObject = Instantiate(equipmentsPrefab, mainContent);
+
+            Text Title = titleObject.transform.Find("Title").GetComponent<Text>();
+            Title.text = title.name.Replace("_", " ");
+
+            RawImage Image = titleObject.transform.Find("Image").GetComponent<RawImage>();
+            string fileNameWithoutExtension = title.image.Replace(".png", "");
+            fileNameWithoutExtension = fileNameWithoutExtension.Replace(".jpg", "");
+            Texture texture = Resources.Load<Texture>($"{fileNameWithoutExtension}");
+            Image.texture = texture;
+            Image.SetNativeSize();
+            Image.transform.localScale = new Vector3(0.55f, 0.55f, 0.55f);
+
+            RawImage rareImage = titleObject.transform.Find("Rare").GetComponent<RawImage>();
+            Texture rareTexture = Resources.Load<Texture>($"UI/UI/{title.rare}");
+            rareImage.texture = rareTexture;
+
+            RawImage rareBackgroundImage = titleObject.transform.Find("RareBackground").GetComponent<RawImage>();
+            rareImage.gameObject.SetActive(false);
+            rareBackgroundImage.gameObject.SetActive(false);
+
+            GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
+            if (gridLayout != null)
+            {
+                gridLayout.cellSize = new Vector2(200, 230);
+            }
+        }
+    }
+    private void createMilitary(List<Military> militaryList)
+    {
+        foreach (var military in militaryList)
+        {
+            GameObject militaryObject = Instantiate(cardsPrefab, mainContent);
+
+            Text Title = militaryObject.transform.Find("Title").GetComponent<Text>();
+            Title.text = military.name.Replace("_", " ");
+
+            RawImage Image = militaryObject.transform.Find("Image").GetComponent<RawImage>();
+            string fileNameWithoutExtension = military.image.Replace(".png", "");
+            Texture texture = Resources.Load<Texture>($"{fileNameWithoutExtension}");
+            Image.texture = texture;
+
+            RawImage rareImage = militaryObject.transform.Find("Rare").GetComponent<RawImage>();
+            Texture rareTexture = Resources.Load<Texture>($"UI/UI/{military.rare}");
+            rareImage.texture = rareTexture;
+
+            GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
+            if (gridLayout != null)
+            {
+                gridLayout.cellSize = new Vector2(200, 270);
+            }
+        }
+    }
+    private void createSpell(List<Spell> spellList)
+    {
+        foreach (var spell in spellList)
+        {
+            GameObject spellObject = Instantiate(cardsPrefab, mainContent);
+
+            Text Title = spellObject.transform.Find("Title").GetComponent<Text>();
+            Title.text = spell.name.Replace("_", " ");
+
+            RawImage Image = spellObject.transform.Find("Image").GetComponent<RawImage>();
+            string fileNameWithoutExtension = spell.image.Replace(".png", "");
+            Texture texture = Resources.Load<Texture>($"{fileNameWithoutExtension}");
+            Image.texture = texture;
+
+            RawImage rareImage = spellObject.transform.Find("Rare").GetComponent<RawImage>();
+            Texture rareTexture = Resources.Load<Texture>($"UI/UI/{spell.rare}");
+            rareImage.texture = rareTexture;
+
+            GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
+            if (gridLayout != null)
+            {
+                gridLayout.cellSize = new Vector2(200, 270);
+            }
         }
     }
     public void ClearAllPrefabs()
@@ -783,6 +1052,57 @@ public class GalleryManagement : MonoBehaviour
                 List<Pets> petsList = petsManager.GetPets(subType, pageSize, offset);
                 createPets(petsList);
             }
+            else if (mainType.Equals("Skills"))
+            {
+                Skills skillsManager = new Skills();
+                totalRecord = skillsManager.GetSkillsCount(subType);
+                totalPage = CalculateTotalPages(totalRecord, pageSize);
+                currentPage = currentPage + 1;
+                offset = offset + pageSize;
+                List<Skills> skillsList = skillsManager.GetSkills(subType, pageSize, offset);
+                createSkills(skillsList);
+            }
+            else if (mainType.Equals("Symbols"))
+            {
+                Symbols symbolsManager = new Symbols();
+                totalRecord = symbolsManager.GetSymbolsCount(subType);
+                totalPage = CalculateTotalPages(totalRecord, pageSize);
+                currentPage = currentPage + 1;
+                offset = offset + pageSize;
+                List<Symbols> symbolsList = symbolsManager.GetSymbols(subType, pageSize, offset);
+                createSymbols(symbolsList);
+            }
+            else if (mainType.Equals("Titles"))
+            {
+                Titles symbolsManager = new Titles();
+                totalRecord = symbolsManager.GetTitlesCount();
+                totalPage = CalculateTotalPages(totalRecord, pageSize);
+                currentPage = currentPage + 1;
+                offset = offset + pageSize;
+                List<Titles> titlesList = symbolsManager.GetTitles(pageSize, offset);
+                createTitles(titlesList);
+            }
+            else if (mainType.Equals("Military"))
+            {
+                Military militaryManager = new Military();
+                totalRecord = militaryManager.GetMilitaryCount(subType);
+                totalPage = CalculateTotalPages(totalRecord, pageSize);
+                currentPage = currentPage + 1;
+                offset = offset + pageSize;
+                List<Military> militaryList = militaryManager.GetMilitary(subType, pageSize, offset);
+                createMilitary(militaryList);
+            }
+            else if (mainType.Equals("Spell"))
+            {
+                Spell spellManager = new Spell();
+                totalRecord = spellManager.GetSpellCount(subType);
+                totalPage = CalculateTotalPages(totalRecord, pageSize);
+                currentPage = currentPage + 1;
+                offset = offset + pageSize;
+                List<Spell> spellList = spellManager.GetSpell(subType, pageSize, offset);
+                createSpell(spellList);
+            }
+
 
             PageText.text = currentPage.ToString() + "/" + totalPage.ToString();
 
@@ -884,6 +1204,56 @@ public class GalleryManagement : MonoBehaviour
                 offset = offset - pageSize;
                 List<Pets> petsList = petsManager.GetPets(subType, pageSize, offset);
                 createPets(petsList);
+            }
+            else if (mainType.Equals("Skills"))
+            {
+                Skills skillsManager = new Skills();
+                totalRecord = skillsManager.GetSkillsCount(subType);
+                totalPage = CalculateTotalPages(totalRecord, pageSize);
+                currentPage = currentPage - 1;
+                offset = offset - pageSize;
+                List<Skills> skillsList = skillsManager.GetSkills(subType, pageSize, offset);
+                createSkills(skillsList);
+            }
+            else if (mainType.Equals("Symbols"))
+            {
+                Symbols symbolsManager = new Symbols();
+                totalRecord = symbolsManager.GetSymbolsCount(subType);
+                totalPage = CalculateTotalPages(totalRecord, pageSize);
+                currentPage = currentPage - 1;
+                offset = offset - pageSize;
+                List<Symbols> symbolsList = symbolsManager.GetSymbols(subType, pageSize, offset);
+                createSymbols(symbolsList);
+            }
+            else if (mainType.Equals("Titles"))
+            {
+                Titles symbolsManager = new Titles();
+                totalRecord = symbolsManager.GetTitlesCount();
+                totalPage = CalculateTotalPages(totalRecord, pageSize);
+                currentPage = currentPage - 1;
+                offset = offset - pageSize;
+                List<Titles> titlesList = symbolsManager.GetTitles(pageSize, offset);
+                createTitles(titlesList);
+            }
+            else if (mainType.Equals("Military"))
+            {
+                Military militaryManager = new Military();
+                totalRecord = militaryManager.GetMilitaryCount(subType);
+                totalPage = CalculateTotalPages(totalRecord, pageSize);
+                currentPage = currentPage - 1;
+                offset = offset - pageSize;
+                List<Military> militaryList = militaryManager.GetMilitary(subType, pageSize, offset);
+                createMilitary(militaryList);
+            }
+            else if (mainType.Equals("Spell"))
+            {
+                Spell spellManager = new Spell();
+                totalRecord = spellManager.GetSpellCount(subType);
+                totalPage = CalculateTotalPages(totalRecord, pageSize);
+                currentPage = currentPage - 1;
+                offset = offset - pageSize;
+                List<Spell> spellList = spellManager.GetSpell(subType, pageSize, offset);
+                createSpell(spellList);
             }
 
             PageText.text = currentPage.ToString() + "/" + totalPage.ToString();
