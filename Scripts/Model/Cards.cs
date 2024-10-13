@@ -211,7 +211,7 @@ public class Cards
             try
             {
                 connection.Open();
-                string query = "Select * from user_cards uc, cards c where uc.card_id=c.id and uc.user_id =@userId and type= @type limit @limit offset @offset";
+                string query = "Select c.* from user_cards uc, cards c where uc.card_id=c.id and uc.user_id =@userId and c.type= @type limit @limit offset @offset";
                 MySqlCommand command = new MySqlCommand(query, connection);
                 command.Parameters.AddWithValue("@userId", user_id);
                 command.Parameters.AddWithValue("@type", type);
@@ -261,5 +261,29 @@ public class Cards
 
         }
         return cardsList;
+    }
+    public int GetUserCardsCount(string type){
+        int count =0;
+        int user_id=User.CurrentUserId;
+        string connectionString = DatabaseConfig.ConnectionString;
+        using (MySqlConnection connection = new MySqlConnection(connectionString))
+        {
+            try
+            {
+                connection.Open();
+                string query = "Select count(*) from cards c, user_cards uc where c.id=uc.card_id and uc.user_id=@userId and type= @type";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@userId", user_id);
+                command.Parameters.AddWithValue("@type", type);
+                count = Convert.ToInt32(command.ExecuteScalar());
+
+                return count;
+            }
+            catch (MySqlException ex)
+            {
+                Debug.LogError("Error: " + ex.Message);
+            }
+        }
+        return count;
     }
 }

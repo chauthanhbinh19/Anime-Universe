@@ -6454,9 +6454,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 829158368}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 717c5b7a111be184ebf6c677e5b2ffe8, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e6e5e9634d307040a44dfea2f1f1b7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CardsButton: {fileID: 2018121270}
+  BooksButton: {fileID: 1612036277}
+  CaptainsButton: {fileID: 1234748176}
+  CollaborationButton: {fileID: 1662572450}
+  CollaborationEquipmentButton: {fileID: 2031246460}
+  PetsButton: {fileID: 1580156800}
+  SkillsButton: {fileID: 1441254340}
+  MilitaryButton: {fileID: 1690261607}
+  SpellButton: {fileID: 1416668519}
+  buttonPrefab: {fileID: 5647053732788993068, guid: 4bd628bbed58455428208fd8dd4e5337, type: 3}
+  MainMenuPanel: {fileID: 701556133}
+  content: {fileID: 772314850}
+  cardsPrefab: {fileID: 8708252175272485654, guid: 761f96f0852db1842935e703d638b2b6, type: 3}
+  mainContent: {fileID: 787321834}
+  CloseButton: {fileID: 1948990551}
+  equipmentsPrefab: {fileID: 8708252175272485654, guid: 34727d04753abc544bd700053b69859a, type: 3}
+  PageText: {fileID: 272922279}
+  NextButton: {fileID: 1637394504}
+  PreviousButton: {fileID: 264323362}
+  titleText: {fileID: 906950018}
 --- !u!224 &838191927 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6352304789590834188, guid: e463f919cd1e87447b7af6c74c214193, type: 3}
@@ -12200,7 +12220,6 @@ GameObject:
   - component: {fileID: 1318784917}
   - component: {fileID: 1318784919}
   - component: {fileID: 1318784918}
-  - component: {fileID: 1318784920}
   m_Layer: 5
   m_Name: MenuBackground
   m_TagString: Untagged
@@ -12264,38 +12283,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1318784916}
   m_CullTransparentMesh: 1
---- !u!114 &1318784920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1318784916}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e6e5e9634d307040a44dfea2f1f1b7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CardsButton: {fileID: 2018121270}
-  BooksButton: {fileID: 1612036277}
-  CaptainsButton: {fileID: 1234748176}
-  CollaborationButton: {fileID: 1662572450}
-  CollaborationEquipmentButton: {fileID: 2031246460}
-  PetsButton: {fileID: 1580156800}
-  SkillsButton: {fileID: 1441254340}
-  MilitaryButton: {fileID: 1690261607}
-  SpellButton: {fileID: 1416668519}
-  buttonPrefab: {fileID: 5647053732788993068, guid: 4bd628bbed58455428208fd8dd4e5337, type: 3}
-  MainMenuPanel: {fileID: 701556133}
-  content: {fileID: 772314850}
-  cardsPrefab: {fileID: 8708252175272485654, guid: 761f96f0852db1842935e703d638b2b6, type: 3}
-  mainContent: {fileID: 787321834}
-  CloseButton: {fileID: 1948990551}
-  equipmentsPrefab: {fileID: 8708252175272485654, guid: 34727d04753abc544bd700053b69859a, type: 3}
-  PageText: {fileID: 272922279}
-  NextButton: {fileID: 1637394504}
-  PreviousButton: {fileID: 264323362}
-  titleText: {fileID: 906950018}
 --- !u!1001 &1329912867
 PrefabInstance:
   m_ObjectHideFlags: 0

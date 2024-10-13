@@ -225,31 +225,31 @@ public class MainMenuManagement : MonoBehaviour
                         List<Cards> cards = cardsManager.GetUserCards(subtype, pageSize, offset);
                         createCards(cards);
 
-                        totalRecord = cardsManager.GetCardsCount(subtype);
+                        totalRecord = cardsManager.GetUserCardsCount(subtype);
                     }
                     else if (mainType.Equals("Books"))
                     {
                         Books booksManager = new Books();
-                        List<Books> books = booksManager.GetBooks(subtype, pageSize, offset);
+                        List<Books> books = booksManager.GetUserBooks(subtype, pageSize, offset);
                         createBooks(books);
 
-                        totalRecord = booksManager.GetBooksCount(subtype);
+                        totalRecord = booksManager.GetUserBooksCount(subtype);
                     }
                     else if (mainType.Equals("Captains"))
                     {
                         Captains captainsManager = new Captains();
-                        List<Captains> captains = captainsManager.GetCaptains(subtype, pageSize, offset);
+                        List<Captains> captains = captainsManager.GetUserCaptains(subtype, pageSize, offset);
                         createCaptains(captains);
 
-                        totalRecord = captainsManager.GetCaptainsCount(subtype);
+                        totalRecord = captainsManager.GetUserCaptainsCount(subtype);
                     }
                     else if (mainType.Equals("CollaborationEquipments"))
                     {
                         CollaborationEquipment collaborationEquipmentManager = new CollaborationEquipment();
-                        List<CollaborationEquipment> collaborationEquipments = collaborationEquipmentManager.GetCollaborationEquipments(subtype, pageSize, offset);
+                        List<CollaborationEquipment> collaborationEquipments = collaborationEquipmentManager.GetUserCollaborationEquipments(subtype, pageSize, offset);
                         createCollaborationEquipments(collaborationEquipments);
 
-                        totalRecord = collaborationEquipmentManager.GetCollaborationEquipmentCount(subtype);
+                        totalRecord = collaborationEquipmentManager.GetUserCollaborationEquipmentCount(subtype);
                     }
                     else if (mainType.Equals("Equipments"))
                     {
@@ -262,18 +262,18 @@ public class MainMenuManagement : MonoBehaviour
                     else if (mainType.Equals("Pets"))
                     {
                         Pets petsManager = new Pets();
-                        List<Pets> pets = petsManager.GetPets(subtype, pageSize, offset);
+                        List<Pets> pets = petsManager.GetUserPets(subtype, pageSize, offset);
                         createPets(pets);
 
-                        totalRecord = petsManager.GetPetsCount(subtype);
+                        totalRecord = petsManager.GetUserPetsCount(subtype);
                     }
                     else if (mainType.Equals("Skills"))
                     {
                         Skills skillsManager = new Skills();
-                        List<Skills> skills = skillsManager.GetSkills(subtype, pageSize, offset);
+                        List<Skills> skills = skillsManager.GetUserSkills(subtype, pageSize, offset);
                         createSkills(skills);
 
-                        totalRecord = skillsManager.GetSkillsCount(subtype);
+                        totalRecord = skillsManager.GetUserSkillsCount(subtype);
                     }
                     else if (mainType.Equals("Symbols"))
                     {
@@ -286,18 +286,18 @@ public class MainMenuManagement : MonoBehaviour
                     else if (mainType.Equals("Military"))
                     {
                         Military militaryManager = new Military();
-                        List<Military> militaryList = militaryManager.GetMilitary(subtype, pageSize, offset);
+                        List<Military> militaryList = militaryManager.GetUserMilitary(subtype, pageSize, offset);
                         createMilitary(militaryList);
 
-                        totalRecord = militaryManager.GetMilitaryCount(subType);
+                        totalRecord = militaryManager.GetUserMilitaryCount(subType);
                     }
                     else if (mainType.Equals("Spell"))
                     {
                         Spell spellManager = new Spell();
-                        List<Spell> spellList = spellManager.GetSpell(subtype, pageSize, offset);
+                        List<Spell> spellList = spellManager.GetUserSpell(subtype, pageSize, offset);
                         createSpell(spellList);
 
-                        totalRecord = spellManager.GetSpellCount(subType);
+                        totalRecord = spellManager.GetUserSpellCount(subType);
                     }
 
                     totalPage = CalculateTotalPages(totalRecord, pageSize);
@@ -316,10 +316,10 @@ public class MainMenuManagement : MonoBehaviour
             if (mainType.Equals("Collaboration"))
             {
                 Collaboration collaborationManager = new Collaboration();
-                List<Collaboration> collaborations = collaborationManager.GetCollaboration(pageSize, offset);
+                List<Collaboration> collaborations = collaborationManager.GetUserCollaboration(pageSize, offset);
                 createCollaboration(collaborations);
 
-                totalRecord = collaborationManager.GetCollaborationCount();
+                totalRecord = collaborationManager.GetUserCollaborationCount();
             }
             else if (mainType.Equals("Medals"))
             {
@@ -377,31 +377,31 @@ public class MainMenuManagement : MonoBehaviour
             List<Cards> cards = cardsManager.GetUserCards(type, pageSize, offset);
             createCards(cards);
 
-            totalRecord = cardsManager.GetCardsCount(type);
+            totalRecord = cardsManager.GetUserCardsCount(type);
         }
         else if (mainType.Equals("Books"))
         {
             Books booksManager = new Books();
-            List<Books> books = booksManager.GetBooks(type, pageSize, offset);
+            List<Books> books = booksManager.GetUserBooks(type, pageSize, offset);
             createBooks(books);
 
-            totalRecord = booksManager.GetBooksCount(type);
+            totalRecord = booksManager.GetUserBooksCount(type);
         }
         else if (mainType.Equals("Captains"))
         {
             Captains captainsManager = new Captains();
-            List<Captains> captains = captainsManager.GetCaptains(type, pageSize, offset);
+            List<Captains> captains = captainsManager.GetUserCaptains(type, pageSize, offset);
             createCaptains(captains);
 
-            totalRecord = captainsManager.GetCaptainsCount(type);
+            totalRecord = captainsManager.GetUserCaptainsCount(type);
         }
         else if (mainType.Equals("CollaborationEquipments"))
         {
             CollaborationEquipment collaborationEquipmentManager = new CollaborationEquipment();
-            List<CollaborationEquipment> collaborationEquipments = collaborationEquipmentManager.GetCollaborationEquipments(type, pageSize, offset);
+            List<CollaborationEquipment> collaborationEquipments = collaborationEquipmentManager.GetUserCollaborationEquipments(type, pageSize, offset);
             createCollaborationEquipments(collaborationEquipments);
 
-            totalRecord = collaborationEquipmentManager.GetCollaborationEquipmentCount(type);
+            totalRecord = collaborationEquipmentManager.GetUserCollaborationEquipmentCount(type);
         }
         else if (mainType.Equals("Equipments"))
         {
@@ -414,18 +414,18 @@ public class MainMenuManagement : MonoBehaviour
         else if (mainType.Equals("Pets"))
         {
             Pets petsManager = new Pets();
-            List<Pets> pets = petsManager.GetPets(type, pageSize, offset);
+            List<Pets> pets = petsManager.GetUserPets(type, pageSize, offset);
             createPets(pets);
 
-            totalRecord = petsManager.GetPetsCount(type);
+            totalRecord = petsManager.GetUserPetsCount(type);
         }
         else if (mainType.Equals("Skills"))
         {
             Skills skillsManager = new Skills();
-            List<Skills> skills = skillsManager.GetSkills(type, pageSize, offset);
+            List<Skills> skills = skillsManager.GetUserSkills(type, pageSize, offset);
             createSkills(skills);
 
-            totalRecord = skillsManager.GetSkillsCount(type);
+            totalRecord = skillsManager.GetUserSkillsCount(type);
         }
         else if (mainType.Equals("Symbols"))
         {
@@ -438,18 +438,18 @@ public class MainMenuManagement : MonoBehaviour
         else if (mainType.Equals("Military"))
         {
             Military militaryManager = new Military();
-            List<Military> militaryList = militaryManager.GetMilitary(type, pageSize, offset);
+            List<Military> militaryList = militaryManager.GetUserMilitary(type, pageSize, offset);
             createMilitary(militaryList);
 
-            totalRecord = militaryManager.GetMilitaryCount(type);
+            totalRecord = militaryManager.GetUserMilitaryCount(type);
         }
         else if (mainType.Equals("Spell"))
         {
             Spell spellManager = new Spell();
-            List<Spell> spellList = spellManager.GetSpell(type, pageSize, offset);
+            List<Spell> spellList = spellManager.GetUserSpell(type, pageSize, offset);
             createSpell(spellList);
 
-            totalRecord = spellManager.GetSpellCount(type);
+            totalRecord = spellManager.GetUserSpellCount(type);
         }
 
         totalPage = CalculateTotalPages(totalRecord, pageSize);
@@ -965,7 +965,7 @@ public class MainMenuManagement : MonoBehaviour
             if (mainType.Equals("Cards"))
             {
                 Cards cardsManager = new Cards();
-                totalRecord = cardsManager.GetCardsCount(subType);
+                totalRecord = cardsManager.GetUserCardsCount(subType);
                 totalPage = CalculateTotalPages(totalRecord, pageSize);
                 currentPage = currentPage + 1;
                 offset = offset + pageSize;
@@ -975,41 +975,41 @@ public class MainMenuManagement : MonoBehaviour
             else if (mainType.Equals("Books"))
             {
                 Books booksManager = new Books();
-                totalRecord = booksManager.GetBooksCount(subType);
+                totalRecord = booksManager.GetUserBooksCount(subType);
                 totalPage = CalculateTotalPages(totalRecord, pageSize);
                 currentPage = currentPage + 1;
                 offset = offset + pageSize;
-                List<Books> books = booksManager.GetBooks(subType, pageSize, offset);
+                List<Books> books = booksManager.GetUserBooks(subType, pageSize, offset);
                 createBooks(books);
             }
             else if (mainType.Equals("Captains"))
             {
                 Captains captainsManager = new Captains();
-                totalRecord = captainsManager.GetCaptainsCount(subType);
+                totalRecord = captainsManager.GetUserCaptainsCount(subType);
                 totalPage = CalculateTotalPages(totalRecord, pageSize);
                 currentPage = currentPage + 1;
                 offset = offset + pageSize;
-                List<Captains> army = captainsManager.GetCaptains(subType, pageSize, offset);
+                List<Captains> army = captainsManager.GetUserCaptains(subType, pageSize, offset);
                 createCaptains(army);
             }
             else if (mainType.Equals("CollaborationEquipments"))
             {
                 CollaborationEquipment collaborationEquipmentManager = new CollaborationEquipment();
-                totalRecord = collaborationEquipmentManager.GetCollaborationEquipmentCount(subType);
+                totalRecord = collaborationEquipmentManager.GetUserCollaborationEquipmentCount(subType);
                 totalPage = CalculateTotalPages(totalRecord, pageSize);
                 currentPage = currentPage + 1;
                 offset = offset + pageSize;
-                List<CollaborationEquipment> collaborationEquipments = collaborationEquipmentManager.GetCollaborationEquipments(subType, pageSize, offset);
+                List<CollaborationEquipment> collaborationEquipments = collaborationEquipmentManager.GetUserCollaborationEquipments(subType, pageSize, offset);
                 createCollaborationEquipments(collaborationEquipments);
             }
             else if (mainType.Equals("Collaboration"))
             {
                 Collaboration collaborationManager = new Collaboration();
-                totalRecord = collaborationManager.GetCollaborationCount();
+                totalRecord = collaborationManager.GetUserCollaborationCount();
                 totalPage = CalculateTotalPages(totalRecord, pageSize);
                 currentPage = currentPage + 1;
                 offset = offset + pageSize;
-                List<Collaboration> collaboration = collaborationManager.GetCollaboration(pageSize, offset);
+                List<Collaboration> collaboration = collaborationManager.GetUserCollaboration(pageSize, offset);
                 createCollaboration(collaboration);
             }
             else if (mainType.Equals("Equipments"))
@@ -1045,21 +1045,21 @@ public class MainMenuManagement : MonoBehaviour
             else if (mainType.Equals("Pets"))
             {
                 Pets petsManager = new Pets();
-                totalRecord = petsManager.GetPetsCount(subType);
+                totalRecord = petsManager.GetUserPetsCount(subType);
                 totalPage = CalculateTotalPages(totalRecord, pageSize);
                 currentPage = currentPage + 1;
                 offset = offset + pageSize;
-                List<Pets> petsList = petsManager.GetPets(subType, pageSize, offset);
+                List<Pets> petsList = petsManager.GetUserPets(subType, pageSize, offset);
                 createPets(petsList);
             }
             else if (mainType.Equals("Skills"))
             {
                 Skills skillsManager = new Skills();
-                totalRecord = skillsManager.GetSkillsCount(subType);
+                totalRecord = skillsManager.GetUserSkillsCount(subType);
                 totalPage = CalculateTotalPages(totalRecord, pageSize);
                 currentPage = currentPage + 1;
                 offset = offset + pageSize;
-                List<Skills> skillsList = skillsManager.GetSkills(subType, pageSize, offset);
+                List<Skills> skillsList = skillsManager.GetUserSkills(subType, pageSize, offset);
                 createSkills(skillsList);
             }
             else if (mainType.Equals("Symbols"))
@@ -1085,21 +1085,21 @@ public class MainMenuManagement : MonoBehaviour
             else if (mainType.Equals("Military"))
             {
                 Military militaryManager = new Military();
-                totalRecord = militaryManager.GetMilitaryCount(subType);
+                totalRecord = militaryManager.GetUserMilitaryCount(subType);
                 totalPage = CalculateTotalPages(totalRecord, pageSize);
                 currentPage = currentPage + 1;
                 offset = offset + pageSize;
-                List<Military> militaryList = militaryManager.GetMilitary(subType, pageSize, offset);
+                List<Military> militaryList = militaryManager.GetUserMilitary(subType, pageSize, offset);
                 createMilitary(militaryList);
             }
             else if (mainType.Equals("Spell"))
             {
                 Spell spellManager = new Spell();
-                totalRecord = spellManager.GetSpellCount(subType);
+                totalRecord = spellManager.GetUserSpellCount(subType);
                 totalPage = CalculateTotalPages(totalRecord, pageSize);
                 currentPage = currentPage + 1;
                 offset = offset + pageSize;
-                List<Spell> spellList = spellManager.GetSpell(subType, pageSize, offset);
+                List<Spell> spellList = spellManager.GetUserSpell(subType, pageSize, offset);
                 createSpell(spellList);
             }
 
@@ -1118,7 +1118,7 @@ public class MainMenuManagement : MonoBehaviour
             if (mainType.Equals("Cards"))
             {
                 Cards cardsManager = new Cards();
-                totalRecord = cardsManager.GetCardsCount(subType);
+                totalRecord = cardsManager.GetUserCardsCount(subType);
                 totalPage = CalculateTotalPages(totalRecord, pageSize);
                 currentPage = currentPage - 1;
                 offset = offset - pageSize;
@@ -1128,41 +1128,41 @@ public class MainMenuManagement : MonoBehaviour
             else if (mainType.Equals("Books"))
             {
                 Books booksManager = new Books();
-                totalRecord = booksManager.GetBooksCount(subType);
+                totalRecord = booksManager.GetUserBooksCount(subType);
                 totalPage = CalculateTotalPages(totalRecord, pageSize);
                 currentPage = currentPage - 1;
                 offset = offset - pageSize;
-                List<Books> books = booksManager.GetBooks(subType, pageSize, offset);
+                List<Books> books = booksManager.GetUserBooks(subType, pageSize, offset);
                 createBooks(books);
             }
             else if (mainType.Equals("Captains"))
             {
                 Captains captainsManager = new Captains();
-                totalRecord = captainsManager.GetCaptainsCount(subType);
+                totalRecord = captainsManager.GetUserCaptainsCount(subType);
                 totalPage = CalculateTotalPages(totalRecord, pageSize);
                 currentPage = currentPage - 1;
                 offset = offset - pageSize;
-                List<Captains> army = captainsManager.GetCaptains(subType, pageSize, offset);
+                List<Captains> army = captainsManager.GetUserCaptains(subType, pageSize, offset);
                 createCaptains(army);
             }
             else if (mainType.Equals("CollaborationEquipments"))
             {
                 CollaborationEquipment collaborationEquipmentManager = new CollaborationEquipment();
-                totalRecord = collaborationEquipmentManager.GetCollaborationEquipmentCount(subType);
+                totalRecord = collaborationEquipmentManager.GetUserCollaborationEquipmentCount(subType);
                 totalPage = CalculateTotalPages(totalRecord, pageSize);
                 currentPage = currentPage - 1;
                 offset = offset - pageSize;
-                List<CollaborationEquipment> collaborationEquipments = collaborationEquipmentManager.GetCollaborationEquipments(subType, pageSize, offset);
+                List<CollaborationEquipment> collaborationEquipments = collaborationEquipmentManager.GetUserCollaborationEquipments(subType, pageSize, offset);
                 createCollaborationEquipments(collaborationEquipments);
             }
             else if (mainType.Equals("Collaboration"))
             {
                 Collaboration collaborationManager = new Collaboration();
-                totalRecord = collaborationManager.GetCollaborationCount();
+                totalRecord = collaborationManager.GetUserCollaborationCount();
                 totalPage = CalculateTotalPages(totalRecord, pageSize);
                 currentPage = currentPage - 1;
                 offset = offset - pageSize;
-                List<Collaboration> collaboration = collaborationManager.GetCollaboration(pageSize, offset);
+                List<Collaboration> collaboration = collaborationManager.GetUserCollaboration(pageSize, offset);
                 createCollaboration(collaboration);
             }
             else if (mainType.Equals("Equipments"))
@@ -1198,11 +1198,11 @@ public class MainMenuManagement : MonoBehaviour
             else if (mainType.Equals("Pets"))
             {
                 Pets petsManager = new Pets();
-                totalRecord = petsManager.GetPetsCount(subType);
+                totalRecord = petsManager.GetUserPetsCount(subType);
                 totalPage = CalculateTotalPages(totalRecord, pageSize);
                 currentPage = currentPage - 1;
                 offset = offset - pageSize;
-                List<Pets> petsList = petsManager.GetPets(subType, pageSize, offset);
+                List<Pets> petsList = petsManager.GetUserPets(subType, pageSize, offset);
                 createPets(petsList);
             }
             else if (mainType.Equals("Skills"))
@@ -1212,7 +1212,7 @@ public class MainMenuManagement : MonoBehaviour
                 totalPage = CalculateTotalPages(totalRecord, pageSize);
                 currentPage = currentPage - 1;
                 offset = offset - pageSize;
-                List<Skills> skillsList = skillsManager.GetSkills(subType, pageSize, offset);
+                List<Skills> skillsList = skillsManager.GetUserSkills(subType, pageSize, offset);
                 createSkills(skillsList);
             }
             else if (mainType.Equals("Symbols"))
@@ -1238,21 +1238,21 @@ public class MainMenuManagement : MonoBehaviour
             else if (mainType.Equals("Military"))
             {
                 Military militaryManager = new Military();
-                totalRecord = militaryManager.GetMilitaryCount(subType);
+                totalRecord = militaryManager.GetUserMilitaryCount(subType);
                 totalPage = CalculateTotalPages(totalRecord, pageSize);
                 currentPage = currentPage - 1;
                 offset = offset - pageSize;
-                List<Military> militaryList = militaryManager.GetMilitary(subType, pageSize, offset);
+                List<Military> militaryList = militaryManager.GetUserMilitary(subType, pageSize, offset);
                 createMilitary(militaryList);
             }
             else if (mainType.Equals("Spell"))
             {
                 Spell spellManager = new Spell();
-                totalRecord = spellManager.GetSpellCount(subType);
+                totalRecord = spellManager.GetUserSpellCount(subType);
                 totalPage = CalculateTotalPages(totalRecord, pageSize);
                 currentPage = currentPage - 1;
                 offset = offset - pageSize;
-                List<Spell> spellList = spellManager.GetSpell(subType, pageSize, offset);
+                List<Spell> spellList = spellManager.GetUserSpell(subType, pageSize, offset);
                 createSpell(spellList);
             }
 
