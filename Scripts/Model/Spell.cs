@@ -13,6 +13,10 @@ public class Spell
     public string rare { get; set; }
     public string type { get; set; }
     public int star { get; set; }
+    public int level { get; set; }
+    public int experiment { get; set; }
+    public int quantity { get; set; }
+    public bool block { get; set; }
     public double power { get; set; }
     public double percent_all_health { get; set; }
     public double percent_all_physical_attack { get; set; }
@@ -211,7 +215,7 @@ public class Spell
             try
             {
                 connection.Open();
-                string query = "Select s.* from Spell s, user_spell us where s.id=us.spell_id and us.user_id=@userId and s.type= @type limit @limit offset @offset";
+                string query = "Select us.*, s.image, s.rare, s.type from Spell s, user_spell us where s.id=us.spell_id and us.user_id=@userId and s.type= @type limit @limit offset @offset";
                 MySqlCommand command = new MySqlCommand(query, connection);
                 command.Parameters.AddWithValue("@userId", user_id);
                 command.Parameters.AddWithValue("@type", type);
@@ -228,6 +232,10 @@ public class Spell
                         rare = reader.GetString("rare"),
                         type = reader.GetString("type"),
                         star = reader.GetInt32("star"),
+                        level = reader.GetInt32("level"),
+                        experiment = reader.GetInt32("experiment"),
+                        quantity = reader.GetInt32("quantity"),
+                        block = reader.GetBoolean("block"),
                         power = reader.GetDouble("power"),
                         percent_all_health = reader.GetDouble("percent_all_health"),
                         percent_all_physical_attack = reader.GetDouble("percent_all_physical_attack"),

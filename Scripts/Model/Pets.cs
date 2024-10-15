@@ -13,6 +13,10 @@ public class Pets
     public string rare { get; set; }
     public string type { get; set; }
     public int star { get; set; }
+    public int level { get; set; }
+    public int experiment { get; set; }
+    public int quantity { get; set; }
+    public int block { get; set; }
     public double power { get; set; }
     public double health { get; set; }
     public double physical_attack { get; set; }
@@ -211,7 +215,7 @@ public class Pets
             try
             {
                 connection.Open();
-                string query = "Select p.* from Pets p, user_pets up where p.id=up.pet_id and up.user_id=@userId and p.type= @type limit @limit offset @offset";
+                string query = "Select up.*, p.image, p.rare, p.type from Pets p, user_pets up where p.id=up.pet_id and up.user_id=@userId and p.type= @type limit @limit offset @offset";
                 MySqlCommand command = new MySqlCommand(query, connection);
                 command.Parameters.AddWithValue("@userId", user_id);
                 command.Parameters.AddWithValue("@type", type);

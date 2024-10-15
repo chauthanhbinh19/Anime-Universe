@@ -12,12 +12,12 @@ public class MainMenuManagement : MonoBehaviour
     public Button CollaborationButton;
     public Button CollaborationEquipmentButton;
     // public Button EquipmentsButton;
-    // public Button MedalsButton;
-    // public Button MonstersButton;
+    public Button MedalsButton;
+    public Button MonstersButton;
     public Button PetsButton;
     public Button SkillsButton;
-    // public Button SymbolsButton;
-    // public Button TitlesButton;
+    public Button SymbolsButton;
+    public Button TitlesButton;
     public Button MilitaryButton;
     public Button SpellButton;
     public GameObject buttonPrefab;
@@ -49,12 +49,12 @@ public class MainMenuManagement : MonoBehaviour
         CollaborationButton.onClick.AddListener(GetCollaborationType);
         CollaborationEquipmentButton.onClick.AddListener(GetCollaborationEquipmentsType);
         // EquipmentsButton.onClick.AddListener(GetEquipmentsType);
-        // MedalsButton.onClick.AddListener(GetMedalsType);
-        // MonstersButton.onClick.AddListener(GetMonstersType);
+        MedalsButton.onClick.AddListener(GetMedalsType);
+        MonstersButton.onClick.AddListener(GetMonstersType);
         PetsButton.onClick.AddListener(GetPetsType);
         SkillsButton.onClick.AddListener(GetSkillsType);
-        // SymbolsButton.onClick.AddListener(GetSymbolsType);
-        // TitlesButton.onClick.AddListener(GetTitlesType);
+        SymbolsButton.onClick.AddListener(GetSymbolsType);
+        TitlesButton.onClick.AddListener(GetTitlesType);
         MilitaryButton.onClick.AddListener(GetMilitaryType);
         SpellButton.onClick.AddListener(GetSpellType);
 
@@ -278,10 +278,10 @@ public class MainMenuManagement : MonoBehaviour
                     else if (mainType.Equals("Symbols"))
                     {
                         Symbols symbolsManager = new Symbols();
-                        List<Symbols> symbols = symbolsManager.GetSymbols(subtype, pageSize, offset);
+                        List<Symbols> symbols = symbolsManager.GetUserSymbols(subtype, pageSize, offset);
                         createSymbols(symbols);
 
-                        totalRecord = symbolsManager.GetSymbolsCount(subtype);
+                        totalRecord = symbolsManager.GetUserSymbolsCount(subtype);
                     }
                     else if (mainType.Equals("Military"))
                     {
@@ -324,18 +324,18 @@ public class MainMenuManagement : MonoBehaviour
             else if (mainType.Equals("Medals"))
             {
                 Medals medalsManager = new Medals();
-                List<Medals> medalsList = medalsManager.GetMedals(pageSize, offset);
+                List<Medals> medalsList = medalsManager.GetUserMedals(pageSize, offset);
                 createMedals(medalsList);
 
-                totalRecord = medalsManager.GetMedalsCount();
+                totalRecord = medalsManager.GetUserMedalsCount();
             }
             else if (mainType.Equals("Monsters"))
             {
                 Monsters monstersManager = new Monsters();
-                List<Monsters> monstersList = monstersManager.GetMonsters(pageSize, offset);
+                List<Monsters> monstersList = monstersManager.GetUserMonsters(pageSize, offset);
                 createMonsters(monstersList);
 
-                totalRecord = monstersManager.GetMonstersCount();
+                totalRecord = monstersManager.GetUserMonstersCount();
             }
             else if (mainType.Equals("Titles"))
             {
@@ -430,10 +430,10 @@ public class MainMenuManagement : MonoBehaviour
         else if (mainType.Equals("Symbols"))
         {
             Symbols symbolsManager = new Symbols();
-            List<Symbols> symbols = symbolsManager.GetSymbols(type, pageSize, offset);
+            List<Symbols> symbols = symbolsManager.GetUserSymbols(type, pageSize, offset);
             createSymbols(symbols);
 
-            totalRecord = symbolsManager.GetSymbolsCount(type);
+            totalRecord = symbolsManager.GetUserSymbolsCount(type);
         }
         else if (mainType.Equals("Military"))
         {
@@ -1025,21 +1025,21 @@ public class MainMenuManagement : MonoBehaviour
             else if (mainType.Equals("Medals"))
             {
                 Medals medalsManager = new Medals();
-                totalRecord = medalsManager.GetMedalsCount();
+                totalRecord = medalsManager.GetUserMedalsCount();
                 totalPage = CalculateTotalPages(totalRecord, pageSize);
                 currentPage = currentPage + 1;
                 offset = offset + pageSize;
-                List<Medals> medalsList = medalsManager.GetMedals(pageSize, offset);
+                List<Medals> medalsList = medalsManager.GetUserMedals(pageSize, offset);
                 createMedals(medalsList);
             }
             else if (mainType.Equals("Monsters"))
             {
                 Monsters monstersManager = new Monsters();
-                totalRecord = monstersManager.GetMonstersCount();
+                totalRecord = monstersManager.GetUserMonstersCount();
                 totalPage = CalculateTotalPages(totalRecord, pageSize);
                 currentPage = currentPage + 1;
                 offset = offset + pageSize;
-                List<Monsters> monstersList = monstersManager.GetMonsters(pageSize, offset);
+                List<Monsters> monstersList = monstersManager.GetUserMonsters(pageSize, offset);
                 createMonsters(monstersList);
             }
             else if (mainType.Equals("Pets"))
@@ -1065,11 +1065,11 @@ public class MainMenuManagement : MonoBehaviour
             else if (mainType.Equals("Symbols"))
             {
                 Symbols symbolsManager = new Symbols();
-                totalRecord = symbolsManager.GetSymbolsCount(subType);
+                totalRecord = symbolsManager.GetUserSymbolsCount(subType);
                 totalPage = CalculateTotalPages(totalRecord, pageSize);
                 currentPage = currentPage + 1;
                 offset = offset + pageSize;
-                List<Symbols> symbolsList = symbolsManager.GetSymbols(subType, pageSize, offset);
+                List<Symbols> symbolsList = symbolsManager.GetUserSymbols(subType, pageSize, offset);
                 createSymbols(symbolsList);
             }
             else if (mainType.Equals("Titles"))
@@ -1178,21 +1178,21 @@ public class MainMenuManagement : MonoBehaviour
             else if (mainType.Equals("Medals"))
             {
                 Medals medalsManager = new Medals();
-                totalRecord = medalsManager.GetMedalsCount();
+                totalRecord = medalsManager.GetUserMedalsCount();
                 totalPage = CalculateTotalPages(totalRecord, pageSize);
                 currentPage = currentPage - 1;
                 offset = offset - pageSize;
-                List<Medals> medalsList = medalsManager.GetMedals(pageSize, offset);
+                List<Medals> medalsList = medalsManager.GetUserMedals(pageSize, offset);
                 createMedals(medalsList);
             }
             else if (mainType.Equals("Monsters"))
             {
                 Monsters monstersManager = new Monsters();
-                totalRecord = monstersManager.GetMonstersCount();
+                totalRecord = monstersManager.GetUserMonstersCount();
                 totalPage = CalculateTotalPages(totalRecord, pageSize);
                 currentPage = currentPage - 1;
                 offset = offset - pageSize;
-                List<Monsters> monstersList = monstersManager.GetMonsters(pageSize, offset);
+                List<Monsters> monstersList = monstersManager.GetUserMonsters(pageSize, offset);
                 createMonsters(monstersList);
             }
             else if (mainType.Equals("Pets"))
@@ -1218,11 +1218,11 @@ public class MainMenuManagement : MonoBehaviour
             else if (mainType.Equals("Symbols"))
             {
                 Symbols symbolsManager = new Symbols();
-                totalRecord = symbolsManager.GetSymbolsCount(subType);
+                totalRecord = symbolsManager.GetUserSymbolsCount(subType);
                 totalPage = CalculateTotalPages(totalRecord, pageSize);
                 currentPage = currentPage - 1;
                 offset = offset - pageSize;
-                List<Symbols> symbolsList = symbolsManager.GetSymbols(subType, pageSize, offset);
+                List<Symbols> symbolsList = symbolsManager.GetUserSymbols(subType, pageSize, offset);
                 createSymbols(symbolsList);
             }
             else if (mainType.Equals("Titles"))

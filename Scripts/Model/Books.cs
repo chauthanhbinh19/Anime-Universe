@@ -13,6 +13,10 @@ public class Books
     public string rare { get; set; }
     public string type { get; set; }
     public int star { get; set; }
+    public int level { get; set; }
+    public int experiment { get; set; }
+    public int quantity { get; set; }
+    public bool block { get; set; }
     public double power { get; set; }
     public double health { get; set; }
     public double physical_attack { get; set; }
@@ -211,7 +215,7 @@ public class Books
             try
             {
                 connection.Open();
-                string query = "Select b.* from user_books ub, books b where ub.book_id=b.id and ub.user_id =@userId and b.type= @type limit @limit offset @offset";
+                string query = "Select ub.*, b.image, b.rare, b.type from user_books ub, books b where ub.book_id=b.id and ub.user_id =@userId and b.type= @type limit @limit offset @offset";
                 MySqlCommand command = new MySqlCommand(query, connection);
                 command.Parameters.AddWithValue("@userId", user_id);
                 command.Parameters.AddWithValue("@type", type);
@@ -228,6 +232,10 @@ public class Books
                         rare = reader.GetString("rare"),
                         type = reader.GetString("type"),
                         star = reader.GetInt32("star"),
+                        level = reader.GetInt32("level"),
+                        experiment = reader.GetInt32("experiment"),
+                        quantity = reader.GetInt32("quantity"),
+                        block = reader.GetBoolean("block"),
                         power = reader.GetDouble("power"),
                         health = reader.GetDouble("health"),
                         physical_attack = reader.GetDouble("physical_attack"),

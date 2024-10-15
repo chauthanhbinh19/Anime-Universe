@@ -13,6 +13,11 @@ public class Equipments
     public string rare { get; set; }
     public string type { get; set; }
     public int star { get; set; }
+    public int sequence { get; set; }
+    public int level { get; set; }
+    public int experiment { get; set; }
+    public int quantity { get; set; }
+    public int block { get; set; }
     public double power { get; set; }
     public double health { get; set; }
     public double physical_attack { get; set; }

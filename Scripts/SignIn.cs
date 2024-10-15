@@ -14,6 +14,8 @@ public class SignIn : MonoBehaviour
     public GameObject createNamePanel;
     public GameObject MainPanel;
     public GameObject WaitingPanel;
+    public Text ErrorUsername;
+    public Text ErrorPassword;
     void Start()
     {
         signUpButton.onClick.AddListener(signUpButtonClicked);
@@ -36,6 +38,8 @@ public class SignIn : MonoBehaviour
         if(status==1){
             MainPanel.SetActive(true);
             WaitingPanel.SetActive(false);
+        }else if(status==0){
+            ErrorUsername.text="Your account does not exist";
         }
     }
 }

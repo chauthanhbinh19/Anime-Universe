@@ -13,6 +13,11 @@ public class CollaborationEquipment
     public string rare { get; set; }
     public string type { get; set; }
     public int star { get; set; }
+    public int sequence { get; set; }
+    public int level { get; set; }
+    public int experiment { get; set; }
+    public int quantity { get; set; }
+    public bool block { get; set; }
     public double power { get; set; }
     public double health { get; set; }
     public double physical_attack { get; set; }
@@ -211,7 +216,7 @@ public class CollaborationEquipment
             try
             {
                 connection.Open();
-                string query = "Select ce.* from collaboration_equipments ce, user_collaboration_equipments uce where ce.id=uce.collaboration_equipment_id and uce.user_id=@userId and ce.type= @type limit @limit offset @offset";
+                string query = "Select uce.*, ce.image, ce.rare, ce.type from collaboration_equipments ce, user_collaboration_equipments uce where ce.id=uce.collaboration_equipment_id and uce.user_id=@userId and ce.type= @type limit @limit offset @offset";
                 MySqlCommand command = new MySqlCommand(query, connection);
                 command.Parameters.AddWithValue("@userId", user_id);
                 command.Parameters.AddWithValue("@type", type);
@@ -228,6 +233,10 @@ public class CollaborationEquipment
                         rare = reader.GetString("rare"),
                         type = reader.GetString("type"),
                         star = reader.GetInt32("star"),
+                        level = reader.GetInt32("level"),
+                        experiment = reader.GetInt32("experiment"),
+                        quantity = reader.GetInt32("quantity"),
+                        block = reader.GetBoolean("block"),
                         power = reader.GetDouble("power"),
                         health = reader.GetDouble("health"),
                         physical_attack = reader.GetDouble("physical_attack"),

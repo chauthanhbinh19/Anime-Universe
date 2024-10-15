@@ -13,6 +13,7 @@ public class Skills
     public string rare { get; set; }
     public string type { get; set; }
     public int star { get; set; }
+    public int quantity { get; set; }
     public double power { get; set; }
     public double health { get; set; }
     public double physical_attack { get; set; }
@@ -209,7 +210,7 @@ public class Skills
             try
             {
                 connection.Open();
-                string query = "Select s.* from Skills s,user_skill us where s.id=us.skill_id and us.user_id=@userId and s.type= @type limit @limit offset @offset";
+                string query = "Select us.*, s.image, s.rare, s.type from Skills s,user_skill us where s.id=us.skill_id and us.user_id=@userId and s.type= @type limit @limit offset @offset";
                 MySqlCommand command = new MySqlCommand(query, connection);
                 command.Parameters.AddWithValue("@userId", user_id);
                 command.Parameters.AddWithValue("@type", type);
