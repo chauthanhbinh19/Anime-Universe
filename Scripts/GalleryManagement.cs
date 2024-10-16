@@ -493,12 +493,11 @@ public class GalleryManagement : MonoBehaviour
             RawImage rareImage = cardObject.transform.Find("Rare").GetComponent<RawImage>();
             Texture rareTexture = Resources.Load<Texture>($"UI/UI/{card.rare}");
             rareImage.texture = rareTexture;
-
-            GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
-            if (gridLayout != null)
-            {
-                gridLayout.cellSize = new Vector2(200, 270);
-            }
+        }
+        GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
+        if (gridLayout != null)
+        {
+            gridLayout.cellSize = new Vector2(200, 250);
         }
     }
     private void createBooks(List<Books> books)
@@ -546,13 +545,11 @@ public class GalleryManagement : MonoBehaviour
             {
                 Image.transform.localScale = new Vector3(0.17f, 0.17f, 0.17f);
             }
-
-
-            GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
-            if (gridLayout != null)
-            {
-                gridLayout.cellSize = new Vector2(280, 300);
-            }
+        }
+        GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
+        if (gridLayout != null)
+        {
+            gridLayout.cellSize = new Vector2(280, 300);
         }
     }
     private void createCaptains(List<Captains> captainsList)
@@ -573,12 +570,11 @@ public class GalleryManagement : MonoBehaviour
             RawImage rareImage = captainsObject.transform.Find("Rare").GetComponent<RawImage>();
             Texture rareTexture = Resources.Load<Texture>($"UI/UI/{captain.rare}");
             rareImage.texture = rareTexture;
-
-            GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
-            if (gridLayout != null)
-            {
-                gridLayout.cellSize = new Vector2(200, 270);
-            }
+        }
+        GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
+        if (gridLayout != null)
+        {
+            gridLayout.cellSize = new Vector2(200, 250);
         }
     }
     private void createCollaboration(List<Collaboration> collaborationList)
@@ -602,12 +598,11 @@ public class GalleryManagement : MonoBehaviour
 
             Image.SetNativeSize();
             Image.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
-
-            GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
-            if (gridLayout != null)
-            {
-                gridLayout.cellSize = new Vector2(280, 230);
-            }
+        }
+        GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
+        if (gridLayout != null)
+        {
+            gridLayout.cellSize = new Vector2(280, 230);
         }
     }
     private void createCollaborationEquipments(List<CollaborationEquipment> collaborationEquipmentList)
@@ -627,12 +622,11 @@ public class GalleryManagement : MonoBehaviour
             RawImage rareImage = collaborationEquipmentObject.transform.Find("Rare").GetComponent<RawImage>();
             Texture rareTexture = Resources.Load<Texture>($"UI/UI/{collaborationEquipment.rare}");
             rareImage.texture = rareTexture;
-
-            GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
-            if (gridLayout != null)
-            {
-                gridLayout.cellSize = new Vector2(200, 230);
-            }
+        }
+        GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
+        if (gridLayout != null)
+        {
+            gridLayout.cellSize = new Vector2(200, 230);
         }
     }
     private void createEquipments(List<Equipments> equipmentList)
@@ -655,12 +649,11 @@ public class GalleryManagement : MonoBehaviour
             RawImage rareImage = equipmentObject.transform.Find("Rare").GetComponent<RawImage>();
             Texture rareTexture = Resources.Load<Texture>($"UI/UI/{equipment.rare}");
             rareImage.texture = rareTexture;
-
-            GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
-            if (gridLayout != null)
-            {
-                gridLayout.cellSize = new Vector2(200, 230);
-            }
+        }
+        GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
+        if (gridLayout != null)
+        {
+            gridLayout.cellSize = new Vector2(200, 230);
         }
     }
     private void createMedals(List<Medals> medalsList)
@@ -734,13 +727,11 @@ public class GalleryManagement : MonoBehaviour
             {
                 Image.transform.localScale = new Vector3(0.17f, 0.17f, 0.17f);
             }
-
-
-            GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
-            if (gridLayout != null)
-            {
-                gridLayout.cellSize = new Vector2(280, 280);
-            }
+        }
+        GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
+        if (gridLayout != null)
+        {
+            gridLayout.cellSize = new Vector2(280, 280);
         }
     }
     private void createPets(List<Pets> petsList)
@@ -812,12 +803,11 @@ public class GalleryManagement : MonoBehaviour
             RawImage rareImage = skillObject.transform.Find("Rare").GetComponent<RawImage>();
             Texture rareTexture = Resources.Load<Texture>($"UI/UI/{skill.rare}");
             rareImage.texture = rareTexture;
-
-            GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
-            if (gridLayout != null)
-            {
-                gridLayout.cellSize = new Vector2(200, 230);
-            }
+        }
+        GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
+        if (gridLayout != null)
+        {
+            gridLayout.cellSize = new Vector2(200, 230);
         }
     }
     private void createSymbols(List<Symbols> symbolsList)
@@ -844,12 +834,11 @@ public class GalleryManagement : MonoBehaviour
             RawImage rareBackgroundImage = symbolObject.transform.Find("RareBackground").GetComponent<RawImage>();
             rareImage.gameObject.SetActive(false);
             rareBackgroundImage.gameObject.SetActive(false);
-
-            GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
-            if (gridLayout != null)
-            {
-                gridLayout.cellSize = new Vector2(200, 230);
-            }
+        }
+        GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
+        if (gridLayout != null)
+        {
+            gridLayout.cellSize = new Vector2(200, 230);
         }
     }
     private void createTitles(List<Titles> titlesList)
@@ -876,12 +865,11 @@ public class GalleryManagement : MonoBehaviour
             RawImage rareBackgroundImage = titleObject.transform.Find("RareBackground").GetComponent<RawImage>();
             rareImage.gameObject.SetActive(false);
             rareBackgroundImage.gameObject.SetActive(false);
-
-            GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
-            if (gridLayout != null)
-            {
-                gridLayout.cellSize = new Vector2(200, 230);
-            }
+        }
+        GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
+        if (gridLayout != null)
+        {
+            gridLayout.cellSize = new Vector2(200, 230);
         }
     }
     private void createMilitary(List<Military> militaryList)
@@ -901,12 +889,11 @@ public class GalleryManagement : MonoBehaviour
             RawImage rareImage = militaryObject.transform.Find("Rare").GetComponent<RawImage>();
             Texture rareTexture = Resources.Load<Texture>($"UI/UI/{military.rare}");
             rareImage.texture = rareTexture;
-
-            GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
-            if (gridLayout != null)
-            {
-                gridLayout.cellSize = new Vector2(200, 270);
-            }
+        }
+        GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
+        if (gridLayout != null)
+        {
+            gridLayout.cellSize = new Vector2(200, 250);
         }
     }
     private void createSpell(List<Spell> spellList)
@@ -926,12 +913,11 @@ public class GalleryManagement : MonoBehaviour
             RawImage rareImage = spellObject.transform.Find("Rare").GetComponent<RawImage>();
             Texture rareTexture = Resources.Load<Texture>($"UI/UI/{spell.rare}");
             rareImage.texture = rareTexture;
-
-            GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
-            if (gridLayout != null)
-            {
-                gridLayout.cellSize = new Vector2(200, 270);
-            }
+        }
+        GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
+        if (gridLayout != null)
+        {
+            gridLayout.cellSize = new Vector2(200, 250);
         }
     }
     public void ClearAllPrefabs()

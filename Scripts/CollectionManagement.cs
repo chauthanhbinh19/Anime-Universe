@@ -510,11 +510,11 @@ public class CollectionManagement : MonoBehaviour
                 blockImage.gameObject.SetActive(true);
                 Unlock.gameObject.SetActive(false);
             }
-            GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
-            if (gridLayout != null)
-            {
-                gridLayout.cellSize = new Vector2(200, 270);
-            }
+        }
+        GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
+        if (gridLayout != null)
+        {
+            gridLayout.cellSize = new Vector2(200, 250);
         }
     }
     private void createBooks(List<Books> books)
@@ -580,13 +580,11 @@ public class CollectionManagement : MonoBehaviour
             {
                 Image.transform.localScale = new Vector3(0.17f, 0.17f, 0.17f);
             }
-
-
-            GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
-            if (gridLayout != null)
-            {
-                gridLayout.cellSize = new Vector2(280, 300);
-            }
+        }
+        GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
+        if (gridLayout != null)
+        {
+            gridLayout.cellSize = new Vector2(280, 300);
         }
     }
     private void createCaptains(List<Captains> captainsList)
@@ -625,12 +623,11 @@ public class CollectionManagement : MonoBehaviour
                 blockImage.gameObject.SetActive(true);
                 Unlock.gameObject.SetActive(false);
             }
-
-            GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
-            if (gridLayout != null)
-            {
-                gridLayout.cellSize = new Vector2(200, 270);
-            }
+        }
+        GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
+        if (gridLayout != null)
+        {
+            gridLayout.cellSize = new Vector2(200, 250);
         }
     }
     private void createCollaboration(List<Collaboration> collaborationList)
@@ -672,12 +669,11 @@ public class CollectionManagement : MonoBehaviour
                 blockImage.gameObject.SetActive(true);
                 Unlock.gameObject.SetActive(false);
             }
-
-            GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
-            if (gridLayout != null)
-            {
-                gridLayout.cellSize = new Vector2(280, 230);
-            }
+        }
+        GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
+        if (gridLayout != null)
+        {
+            gridLayout.cellSize = new Vector2(280, 230);
         }
     }
     private void createCollaborationEquipments(List<CollaborationEquipment> collaborationEquipmentList)
@@ -715,12 +711,11 @@ public class CollectionManagement : MonoBehaviour
                 blockImage.gameObject.SetActive(true);
                 Unlock.gameObject.SetActive(false);
             }
-
-            GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
-            if (gridLayout != null)
-            {
-                gridLayout.cellSize = new Vector2(200, 230);
-            }
+        }
+        GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
+        if (gridLayout != null)
+        {
+            gridLayout.cellSize = new Vector2(200, 230);
         }
     }
     private void createEquipments(List<Equipments> equipmentList)
@@ -761,12 +756,11 @@ public class CollectionManagement : MonoBehaviour
                 blockImage.gameObject.SetActive(true);
                 Unlock.gameObject.SetActive(false);
             }
-
-            GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
-            if (gridLayout != null)
-            {
-                gridLayout.cellSize = new Vector2(200, 230);
-            }
+        }
+        GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
+        if (gridLayout != null)
+        {
+            gridLayout.cellSize = new Vector2(200, 230);
         }
     }
     private void createMedals(List<Medals> medalsList)
@@ -876,13 +870,11 @@ public class CollectionManagement : MonoBehaviour
             {
                 Image.transform.localScale = new Vector3(0.17f, 0.17f, 0.17f);
             }
-
-
-            GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
-            if (gridLayout != null)
-            {
-                gridLayout.cellSize = new Vector2(280, 280);
-            }
+        }
+        GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
+        if (gridLayout != null)
+        {
+            gridLayout.cellSize = new Vector2(280, 280);
         }
     }
     private void createPets(List<Pets> petsList)
@@ -990,12 +982,11 @@ public class CollectionManagement : MonoBehaviour
                 blockImage.gameObject.SetActive(true);
                 Unlock.gameObject.SetActive(false);
             }
-
-            GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
-            if (gridLayout != null)
-            {
-                gridLayout.cellSize = new Vector2(200, 230);
-            }
+        }
+        GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
+        if (gridLayout != null)
+        {
+            gridLayout.cellSize = new Vector2(200, 230);
         }
     }
     private void createSymbols(List<Symbols> symbolsList)
@@ -1040,12 +1031,11 @@ public class CollectionManagement : MonoBehaviour
             RawImage rareBackgroundImage = symbolObject.transform.Find("RareBackground").GetComponent<RawImage>();
             rareImage.gameObject.SetActive(false);
             rareBackgroundImage.gameObject.SetActive(false);
-
-            GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
-            if (gridLayout != null)
-            {
-                gridLayout.cellSize = new Vector2(200, 230);
-            }
+        }
+        GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
+        if (gridLayout != null)
+        {
+            gridLayout.cellSize = new Vector2(200, 230);
         }
     }
     private void createTitles(List<Titles> titlesList)
@@ -1090,12 +1080,11 @@ public class CollectionManagement : MonoBehaviour
             RawImage rareBackgroundImage = titleObject.transform.Find("RareBackground").GetComponent<RawImage>();
             rareImage.gameObject.SetActive(false);
             rareBackgroundImage.gameObject.SetActive(false);
-
-            GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
-            if (gridLayout != null)
-            {
-                gridLayout.cellSize = new Vector2(200, 230);
-            }
+        }
+        GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
+        if (gridLayout != null)
+        {
+            gridLayout.cellSize = new Vector2(200, 230);
         }
     }
     private void createMilitary(List<Military> militaryList)
@@ -1133,12 +1122,11 @@ public class CollectionManagement : MonoBehaviour
                 blockImage.gameObject.SetActive(true);
                 Unlock.gameObject.SetActive(false);
             }
-
-            GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
-            if (gridLayout != null)
-            {
-                gridLayout.cellSize = new Vector2(200, 270);
-            }
+        }
+        GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
+        if (gridLayout != null)
+        {
+            gridLayout.cellSize = new Vector2(200, 250);
         }
     }
     private void createSpell(List<Spell> spellList)
@@ -1176,12 +1164,11 @@ public class CollectionManagement : MonoBehaviour
                 blockImage.gameObject.SetActive(true);
                 Unlock.gameObject.SetActive(false);
             }
-
-            GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
-            if (gridLayout != null)
-            {
-                gridLayout.cellSize = new Vector2(200, 270);
-            }
+        }
+        GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
+        if (gridLayout != null)
+        {
+            gridLayout.cellSize = new Vector2(200, 250);
         }
     }
     public void ClearAllPrefabs()
