@@ -514,7 +514,7 @@ public class CollectionManagement : MonoBehaviour
         GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
         if (gridLayout != null)
         {
-            gridLayout.cellSize = new Vector2(200, 250);
+            gridLayout.cellSize = new Vector2(200, 265);
         }
     }
     private void createBooks(List<Books> books)
@@ -627,7 +627,7 @@ public class CollectionManagement : MonoBehaviour
         GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
         if (gridLayout != null)
         {
-            gridLayout.cellSize = new Vector2(200, 250);
+            gridLayout.cellSize = new Vector2(200, 265);
         }
     }
     private void createCollaboration(List<Collaboration> collaborationList)
@@ -1126,7 +1126,7 @@ public class CollectionManagement : MonoBehaviour
         GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
         if (gridLayout != null)
         {
-            gridLayout.cellSize = new Vector2(200, 250);
+            gridLayout.cellSize = new Vector2(200, 265);
         }
     }
     private void createSpell(List<Spell> spellList)
@@ -1168,7 +1168,7 @@ public class CollectionManagement : MonoBehaviour
         GridLayoutGroup gridLayout = mainContent.GetComponent<GridLayoutGroup>();
         if (gridLayout != null)
         {
-            gridLayout.cellSize = new Vector2(200, 250);
+            gridLayout.cellSize = new Vector2(200, 265);
         }
     }
     public void ClearAllPrefabs()
