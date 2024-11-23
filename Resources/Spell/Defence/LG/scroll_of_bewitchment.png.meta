@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 533254cb042ae6b4995bfe039692794f
+guid: 86a33d390103d0541bc759c87891db9c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -64,43 +64,7 @@ TextureImporter:
   ignorePngGamma: 0
   applyGammaDecoding: 0
   cookieLightType: 0
-  platformSettings:
-  - serializedVersion: 3
-    buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Server
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
+  platformSettings: []
   spriteSheet:
     serializedVersion: 2
     sprites: []
